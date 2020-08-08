@@ -1,4 +1,10 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<!-- CSS -->
+<link rel="shortcut icon" type="image/x-icon" href="<c:url value="/images/fav-icon.png"/>" />
+<link rel="stylesheet"    type="text/css"     href="<c:url value="/css/style.css"/>" />
+<link rel="stylesheet"    type="text/css"     href="<c:url value="/css/slider-style.css"/>" />
+<link rel="stylesheet"    type="text/css"     href="<c:url value="/css/jquery.mmenu.all.css"/>" />
+<link rel="stylesheet"    type="text/css"     href="<c:url value="/bootstrap/css/bootstrap.min.css"/>" />
 
 <!-- JS -->
 <script type="application/x-javascript">
@@ -20,10 +26,3 @@
 	});
 </script>
 <!-----//768px-menu----->
-
-<!-- CSS -->
-<link rel="shortcut icon" type="image/x-icon" href="<c:url value="/images/fav-icon.png"/>" />
-<link rel="stylesheet"    type="text/css"     href="<c:url value="/css/style.css"/>" />
-<link rel="stylesheet"    type="text/css"     href="<c:url value="/css/slider-style.css"/>" />
-<link rel="stylesheet"    type="text/css"     href="<c:url value="/css/jquery.mmenu.all.css"/>" />
-<link rel="stylesheet"    type="text/css"     href="<c:url value="/bootstrap/css/bootstrap.min.css"/>" />

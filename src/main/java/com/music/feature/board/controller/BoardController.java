@@ -1,13 +1,19 @@
-package com.music.feature.board;
+package com.music.feature.board.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.music.feature.board.service.BoardService;
 
 @Controller
 @RequestMapping("/board")
 public class BoardController {
 	public static final String TILES_PREFIX="tiles.board.";
+	
+	@Autowired BoardService boardService;
+	
 	
 	@GetMapping("/pageList.do")
 	public String pageBoardList() {
@@ -26,3 +32,4 @@ public class BoardController {
 		return TILES_PREFIX + "boardModify";
 	}
 }
+
