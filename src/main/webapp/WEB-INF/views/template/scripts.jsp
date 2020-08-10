@@ -24,5 +24,26 @@
 	$(function() {
 		$('nav#menu-left').mmenu();
 	});
+	var MY_CTX = "${pageContext.request.contextPath}";
+
+	$.fn.serializeObject = function(test){
+		var serializeArray = $(this).serializeArray();
+		var o = {};
+		for(var i in serializeArray){
+			var unit = serializeArray[i];
+			o[unit.name] = unit.value;
+		}
+		return o;
+	}
+	
+	$.fn.serializeJson = function(test){
+		var serializeArray = $(this).serializeArray();
+		var o = {};
+		for(var i in serializeArray){
+			var unit = serializeArray[i];
+			o[unit.name] = unit.value;
+		}
+		return JSON.stringify(o);
+	}
 </script>
 <!-----//768px-menu----->

@@ -1,34 +1,48 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <div class="wrap"> 
-	<h1><span>자유</span> 게시판</h1>
-	<table class="table">
+	<h1><span>자유게시판</span> 목록</h1>
+	<table class="table table-bordered table-hover">
 		<thead>
 			<tr>
-				<th>#</th>
-				<th>First Name</th>
-				<th>Last Name</th>
-				<th>Username</th>
+				<th width="10%">#</th>
+				<th width="*">제목</th>
+				<th width="20%">작성자</th>
+				<th width="30%">작성일</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<td>Mark</td>
-				<td>Otto</td>
-				<td>@mdo</td>
-			</tr>
-			<tr>
-				<th scope="row">2</th>
-				<td>Jacob</td>
-				<td>Thornton</td>
-				<td>@fat</td>
-			</tr>
-			<tr>
-				<th scope="row">3</th>
-				<td>Larry</td>
-				<td>the Bird</td>
-				<td>@twitter</td>
-			</tr>
+		<tbody id="boardList">
 		</tbody>
 	</table>
+	<button type="button" class="btn btn-primary" onclick="location.href='<c:url value="/board/pageRegist.do'"/>">등록</button>
 </div>
+<script>
+function getBoardList(){
+	var request = $.ajax({
+		method: "GET",
+		url: "/board/getList.do",
+		data: {}
+	});
+	
+	request.done(function(data){
+		var list = data.list;
+		console.log(list);
+		var $boardList = $("#boardList");
+		list.forEach(function(board){
+			var detailPageUrl = MY_CTX + `/board/pageDetail.do?id=${'${board.id}'}`;
+			
+			$boardList.append(`<tr>
+				<th scope="row">${'${board.id}'}</th>
+				<td><a href="${'${detailPageUrl}'}">${'${board.title}'}</a></td>
+				<td>${'${board.regId}'}</td>
+				<td>${'${board.regDt}'}</td>
+			</tr>`);
+		});
+	});
+	
+	request.fail(console.log);
+}
+
+$(function(){
+	getBoardList();
+});
+</script>

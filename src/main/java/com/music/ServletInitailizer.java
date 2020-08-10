@@ -1,4 +1,4 @@
-package com.music.music;
+package com.music;
 
 import org.apache.catalina.Context;
 
