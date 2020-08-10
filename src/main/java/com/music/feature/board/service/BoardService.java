@@ -44,15 +44,36 @@ public class BoardService {
 		return resMap;
 	}
 
+	/**
+	 * <pre>자유게시판 상세 조회</pre>
+	 * @Author      : kjws
+	 * @Date        : 2020. 8. 10.
+	 * @param boardVo
+	 * @return
+	 */
 	public BoardVo getBoard(BoardVo boardVo) {
 		return boardMapper.selectBoard(boardVo);
 	}
 
+	/**
+	 * <pre>자유게시판 수정</pre>
+	 * @Author      : kjws
+	 * @Date        : 2020. 8. 10.
+	 * @param boardVo
+	 * @return
+	 */
 	@Transactional
 	public void modifyBoard(BoardVo boardVo) {
 		int iRet = boardMapper.updateBoard(boardVo);
 	}
 
+	/**
+	 * <pre>자유게시판 삭제</pre>
+	 * @Author      : kjws
+	 * @Date        : 2020. 8. 10.
+	 * @param boardVo
+	 * @return
+	 */
 	@Transactional
 	public void removeBoard(BoardVo boardVo) {
 		int iRet = boardMapper.deleteBoard(boardVo);

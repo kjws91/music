@@ -23,46 +23,105 @@ public class BoardController {
 	public static final String TILES_PREFIX="tiles.board.";
 	
 	@Autowired BoardService boardService;
-	
+
+	/**
+	 * <pre>자유게시판 목록 페이지 이동</pre>
+	 * @Author      : kjws
+	 * @Date        : 2020. 8. 10.
+	 * @return
+	 */
 	@GetMapping("/pageList.do")
 	public String pageBoardList() {
 		return TILES_PREFIX + "boardList";
 	}
+	/**
+	 * <pre>자유게시판 등록 페이지 이동</pre>
+	 * @Author      : kjws
+	 * @Date        : 2020. 8. 10.
+	 * @return
+	 */
 	@GetMapping("/pageRegist.do")
 	public String pageBoardRegist() {
 		return TILES_PREFIX + "boardRegist";
 	}
+	/**
+	 * <pre>자유게시판 상세 페이지 이동</pre>
+	 * @Author      : kjws
+	 * @Date        : 2020. 8. 10.
+	 * @return
+	 */
 	@GetMapping("/pageDetail.do")
 	public String pageBoardDetail() {
 		return TILES_PREFIX + "boardDetail";
 	}
+	/**
+	 * <pre>자유게시판 수정 페이지 이동</pre>
+	 * @Author      : kjws
+	 * @Date        : 2020. 8. 10.
+	 * @return
+	 */
 	@GetMapping("/pageModify.do")
 	public String pageBoardModify() {
 		return TILES_PREFIX + "boardModify";
 	}
-	
+
+	/**
+	 * <pre>자유게시판 목록 조회</pre>
+	 * @Author      : kjws
+	 * @Date        : 2020. 8. 10.
+	 * @param boardVo
+	 * @return
+	 */
 	@GetMapping("/getList.do")
 	public @ResponseBody Map<String, Object> getBoardList(BoardVo boardVo) {
 		return boardService.getBoardList(boardVo);
 	}
-	
+
+	/**
+	 * <pre>자유게시판 등록</pre>
+	 * @Author      : kjws
+	 * @Date        : 2020. 8. 10.
+	 * @param boardVo
+	 * @return
+	 */
 	@PostMapping("/create.do")
 	public @ResponseBody ResponseEntity<String> createBoard(BoardVo boardVo) {
 		boardService.createBoard(boardVo);
 		return new ResponseEntity<String>(null, null, HttpStatus.CREATED);
 	}
-	
+
+	/**
+	 * <pre>자유게시판 상세 조회</pre>
+	 * @Author      : kjws
+	 * @Date        : 2020. 8. 10.
+	 * @param boardVo
+	 * @return
+	 */
 	@GetMapping("/get.do")
 	public @ResponseBody BoardVo getBoard(BoardVo boardVo) {
 		return boardService.getBoard(boardVo);
 	}
-	
+
+	/**
+	 * <pre>자유게시판 수정</pre>
+	 * @Author      : kjws
+	 * @Date        : 2020. 8. 10.
+	 * @param boardVo
+	 * @return
+	 */
 	@PutMapping("/modify.do")
 	public @ResponseBody ResponseEntity<String> modifyBoard(@RequestBody BoardVo boardVo) {
 		boardService.modifyBoard(boardVo);
 		return new ResponseEntity<String>(null, null, HttpStatus.OK);
 	}
-	
+
+	/**
+	 * <pre>자유게시판 삭제</pre>
+	 * @Author      : kjws
+	 * @Date        : 2020. 8. 10.
+	 * @param boardVo
+	 * @return
+	 */
 	@DeleteMapping("/remove.do")
 	public @ResponseBody ResponseEntity<String> removeBoard(@RequestBody BoardVo boardVo) {
 		boardService.removeBoard(boardVo);
