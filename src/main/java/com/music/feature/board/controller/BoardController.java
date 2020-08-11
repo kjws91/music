@@ -18,7 +18,6 @@ import com.music.feature.board.service.BoardService;
 import com.music.feature.board.vo.BoardVo;
 
 @Controller
-@RequestMapping("/board")
 public class BoardController {
 	public static final String TILES_PREFIX="tiles.board.";
 	
@@ -30,7 +29,7 @@ public class BoardController {
 	 * @Date        : 2020. 8. 10.
 	 * @return
 	 */
-	@GetMapping("/pageList.do")
+	@GetMapping("/board/pageList.do")
 	public String pageBoardList() {
 		return TILES_PREFIX + "boardList";
 	}
@@ -40,7 +39,7 @@ public class BoardController {
 	 * @Date        : 2020. 8. 10.
 	 * @return
 	 */
-	@GetMapping("/pageRegist.do")
+	@GetMapping("/board/pageRegist.do")
 	public String pageBoardRegist() {
 		return TILES_PREFIX + "boardRegist";
 	}
@@ -50,7 +49,7 @@ public class BoardController {
 	 * @Date        : 2020. 8. 10.
 	 * @return
 	 */
-	@GetMapping("/pageDetail.do")
+	@GetMapping("/board/pageDetail.do")
 	public String pageBoardDetail() {
 		return TILES_PREFIX + "boardDetail";
 	}
@@ -60,7 +59,7 @@ public class BoardController {
 	 * @Date        : 2020. 8. 10.
 	 * @return
 	 */
-	@GetMapping("/pageModify.do")
+	@GetMapping("/board/pageModify.do")
 	public String pageBoardModify() {
 		return TILES_PREFIX + "boardModify";
 	}
@@ -72,7 +71,7 @@ public class BoardController {
 	 * @param boardVo
 	 * @return
 	 */
-	@GetMapping("/getList.do")
+	@GetMapping("/board/getList.do")
 	public @ResponseBody Map<String, Object> getBoardList(BoardVo boardVo) {
 		return boardService.getBoardList(boardVo);
 	}
@@ -84,7 +83,7 @@ public class BoardController {
 	 * @param boardVo
 	 * @return
 	 */
-	@PostMapping("/create.do")
+	@PostMapping("/board/create.do")
 	public @ResponseBody ResponseEntity<String> createBoard(BoardVo boardVo) {
 		boardService.createBoard(boardVo);
 		return new ResponseEntity<String>(null, null, HttpStatus.CREATED);
@@ -97,7 +96,7 @@ public class BoardController {
 	 * @param boardVo
 	 * @return
 	 */
-	@GetMapping("/get.do")
+	@GetMapping("/board/get.do")
 	public @ResponseBody BoardVo getBoard(BoardVo boardVo) {
 		return boardService.getBoard(boardVo);
 	}
@@ -109,7 +108,7 @@ public class BoardController {
 	 * @param boardVo
 	 * @return
 	 */
-	@PutMapping("/modify.do")
+	@PutMapping("/board/modify.do")
 	public @ResponseBody ResponseEntity<String> modifyBoard(@RequestBody BoardVo boardVo) {
 		boardService.modifyBoard(boardVo);
 		return new ResponseEntity<String>(null, null, HttpStatus.OK);
@@ -122,7 +121,7 @@ public class BoardController {
 	 * @param boardVo
 	 * @return
 	 */
-	@DeleteMapping("/remove.do")
+	@DeleteMapping("/board/remove.do")
 	public @ResponseBody ResponseEntity<String> removeBoard(@RequestBody BoardVo boardVo) {
 		boardService.removeBoard(boardVo);
 		return new ResponseEntity<String>(null, null, HttpStatus.NO_CONTENT);
