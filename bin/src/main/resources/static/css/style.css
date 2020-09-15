@@ -597,11 +597,20 @@ body{
 .icon1 span{
 	background: url(../images/icons.png) no-repeat -6px 0px;
 }
-.icon3 span{
+.icon2 span{
 	background: url(../images/icons.png) no-repeat -328px 0px;
 }
-.icon5 span{
+.icon3 span{
+	background: url(../images/icons.png) no-repeat -268px 0px;
+}
+.icon4 span{
 	background: url(../images/icons.png) no-repeat -74px 0px;
+}
+.icon5 span{
+	background: url(../images/icons.png) no-repeat -140px 0px;
+}
+.icon6 span{
+	background: url(../images/icons.png) no-repeat -204px 0px;
 }
 .feature-grid-right{
 	width:84%;

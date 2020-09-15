@@ -8,8 +8,6 @@
 			<ul>
 				<li><a href="<c:url value="/"/>">홈</a></li>
 				<li><a href="<c:url value="/board/pageList.do"/>">게시판</a></li>
-				<li><a href="<c:url value="/search/pageList.do"/>">음악 검색</a></li>
-				<li><a href="<c:url value="/music/pageList.do"/>">음악 리스트</a></li>
 				<div class="clear"> </div>
 			</ul>
 		</nav>
@@ -20,7 +18,7 @@
 	<div class="wrap">
 	<div class="header-left">
 		<div class="logo">
-			<a href="<c:url value="/"/>">음악 검색 및 재생 웹사이트 프로젝트</a>
+			<a href="<c:url value="/"/>">추천 음악 검색 프로젝트</a>
 		</div>
 	</div>
 	<div class="header-right">
@@ -28,8 +26,6 @@
 		<ul>
 			<li><a href="<c:url value="/"/>">홈</a></li>
 			<li><a href="<c:url value="/board/pageList.do"/>">게시판</a></li>
-			<li><a href="<c:url value="/search/pageList.do"/>">음악 검색</a></li>
-			<li><a href="<c:url value="/music/pageList.do"/>">음악 리스트</a></li>
 		</ul>
 	</div>
 	<div class="sign-ligin-btns">

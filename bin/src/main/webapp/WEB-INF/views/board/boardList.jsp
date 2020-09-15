@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <div class="wrap"> 
-	<h1><span>자유 게시판</span> 목록</h1>
+	<h1><span>자유게시판</span> 목록</h1>
 	<table class="table table-bordered table-hover">
 		<thead>
 			<tr>

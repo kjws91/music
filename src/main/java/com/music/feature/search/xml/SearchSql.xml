@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.music.feature.search.mapper.SearchMapper">
+
+	<select id="selectSearchList" parameterType="SearchVo" resultType="SearchVo">SELECT id
+		     , title
+		     , content
+		     , reg_dt
+		     , reg_id
+		     , mod_dt
+		     , mod_id
+		  FROM search		 WHERE del_yn = 'N'
+	     ORDER BY reg_dt DESC</select>
+	<insert id="insertSearch" parameterType="SearchVo">INSERT INTO search
+		( title
+		, content
+		, reg_dt
+		, reg_id
+		, mod_dt
+		, mod_id
+		, del_yn
+		) VALUES
+		( #{title}
+		, #{content}
+		, now()
+		, 'kjws'
+		, now()
+		, 'kjws'
+		, 'N'
+		)</insert>
+	<select id="selectSearch" parameterType="SearchVo" resultType="SearchVo">SELECT id
+		     , title
+		     , content
+		     , reg_dt
+		     , reg_id
+		     , mod_dt
+		     , mod_id
+		  FROM search		 WHERE id = #{id}
+		   AND del_yn = 'N'</select>
+	<update id="updateSearch" parameterType="SearchVo">UPDATE search 
+		   SET title    = #{title}
+		     , content  = #{content}
+		     , mod_dt   = now()
+		     , mod_id   = 'kjws'
+		 WHERE id = #{id}</update>
+	<update id="deleteSearch" parameterType="SearchVo">UPDATE search SET del_yn = 'Y' WHERE id = #{id}</update>
+</mapper>

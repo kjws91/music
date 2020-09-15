@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <div class="wrap">
-	<h1><span>Web</span> Jukebox</h1>
+	<h1><span>Runkeeper</span> Features</h1>
 	<div class="feature-grid">
 		<div class="feature-grid-left icon1">
 			<span> </span>
 		</div>
 		<div class="feature-grid-right">
-			<h2>음악 검색 및 재생</h2>
-			<p>듣고 싶은 음악을 검색하고 해당 사이트에서 재생해서 들을 수 있음.</p>
+			<h2>All-new design</h2>
+			<p>iOS 7 started with a desire to take an experience people love and make it better. To make it even simpler, more useful, and more enjoyable </p>
 		</div>
 		<div class="clear"> </div>
 	</div>
@@ -16,8 +16,8 @@
 			<span> </span>
 		</div>
 		<div class="feature-grid-right">
-			<h2></h2>
-			<p></p>
+			<h2>All-new features</h2>
+			<p>Control Center, AirDrop for iOS, and smarter multitasking are just a few of the great new features in iOS 7. And all your favorite apps have been enhanced</p>
 		</div>
 		<div class="clear"> </div>
 	</div>
@@ -26,8 +26,8 @@
 			<span> </span>
 		</div>
 		<div class="feature-grid-right">
-			<h2>즐겨듣기 리스트</h2>
-			<p>회원가입, 로그인을 통해 즐겨듣는 음악 리스트를 만들 수 있음.</p>
+			<h2>Date to date Update</h2>
+			<p>iOS 7 started with a desire to take an experience people love and make it better. To make it even simpler, more useful, enjoyable </p>
 		</div>
 		<div class="clear"> </div>
 	</div>
@@ -36,8 +36,8 @@
 			<span> </span>
 		</div>
 		<div class="feature-grid-right">
-			<h2></h2>
-			<p></p>
+			<h2>Instant messaging</h2>
+			<p>Control Center, AirDrop for iOS, and smarter multitasking are just a few of the great new features in iOS 7. And all your favorite apps</p>
 		</div>
 		<div class="clear"> </div>
 	</div>
@@ -46,8 +46,8 @@
 			<span> </span>
 		</div>
 		<div class="feature-grid-right">
-			<h2>음악 커뮤니티</h2>
-			<p>음악 게시판에서 다른 유저들과 자유롭게 소통할 수 있음.</p>
+			<h2>Digital timer</h2>
+			<p>iOS 7 started with a desire to take an experience people love and make it better. To make it even simpler, more useful, enjoyable </p>
 		</div>
 		<div class="clear"> </div>
 	</div>
@@ -56,8 +56,8 @@
 			<span> </span>
 		</div>
 		<div class="feature-grid-right">
-			<h2></h2>
-			<p></p>
+			<h2>Statistics</h2>
+			<p>Control Center, AirDrop for iOS, and smarter multitasking are just a few of the great new features in iOS 7. And all your favorite apps</p>
 		</div>
 		<div class="clear"> </div>
 	</div>
