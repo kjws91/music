@@ -2,19 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.music.feature.music.mapper.MusicMapper">
 
-	<select id="selectMusicList" parameterType="MusicVo" resultType="MusicVo">SELECT id
+	<select id="selectMusicList" parameterType="MusicVo" resultType="MusicVo">
+		SELECT id
 		     , title
 		     , content
+		     , singer
+		     , year
 		     , reg_dt
 		     , reg_id
 		     , mod_dt
 		     , mod_id
 		  FROM music
 		 WHERE del_yn = 'N'
-	     ORDER BY reg_dt DESC</select>
-	<insert id="insertMusic" parameterType="MusicVo">INSERT INTO music
+	     ORDER BY reg_dt DESC
+    </select>
+	<insert id="insertMusic" parameterType="MusicVo">
+		INSERT INTO music
 		( title
 		, content
+		, singer
+		, year
 		, reg_dt
 		, reg_id
 		, mod_dt
@@ -23,26 +30,40 @@
 		) VALUES
 		( #{title}
 		, #{content}
+		, #{singer}
+		, #{year}
 		, now()
 		, 'kjws'
 		, now()
 		, 'kjws'
 		, 'N'
-		)</insert>
-	<select id="selectMusic" parameterType="MusicVo" resultType="MusicVo">SELECT id
+		)
+	</insert>
+	<select id="selectMusic" parameterType="MusicVo" resultType="MusicVo">
+		SELECT id
 		     , title
 		     , content
+		     , singer
+		     , year
 		     , reg_dt
 		     , reg_id
 		     , mod_dt
 		     , mod_id
-		  FROM music		 WHERE id = #{id}
-		   AND del_yn = 'N'</select>
-	<update id="updateMusic" parameterType="MusicVo">UPDATE music 
+		  FROM music		 
+		  WHERE id = #{id}
+		   AND del_yn = 'N'
+    </select>
+	<update id="updateMusic" parameterType="MusicVo">
+		UPDATE music 
 		   SET title    = #{title}
 		     , content  = #{content}
+		     , singer   = #{singer}
+		     , year     = #{year}
 		     , mod_dt   = now()
 		     , mod_id   = 'kjws'
-		 WHERE id = #{id}</update>
-	<update id="deleteMusic" parameterType="MusicVo">UPDATE music SET del_yn = 'Y' WHERE id = #{id}</update>
+		 WHERE id = #{id}
+	</update>
+	<update id="deleteMusic" parameterType="MusicVo">
+		UPDATE music SET del_yn = 'Y' WHERE id = #{id}
+	</update>
 </mapper>

@@ -4,20 +4,32 @@
 	<form id="musicForm" name="musicForm">
 		<input type="hidden" name="id" value="${param.id}"/>
 		<div class="form-group">
-			<label for="title" class="col-sm-2 control-label">제목</label>
+			<label for="title" class="col-sm-2 control-label">노래 제목</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" id="title" name="title" />
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="content" class="col-sm-2 control-label">내용</label>
+			<label for="singer" class="col-sm-2 control-label">가수</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="singer" name="singer"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="content" class="col-sm-2 control-label">가사</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" id="content" name="content"/>
 			</div>
 		</div>
+		<div class="form-group">
+			<label for="year" class="col-sm-2 control-label">출시 년도</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="year" name="year"/>
+			</div>
+		</div>
 		<div class="form-group text-right">
-			<button type="button" class="btn btn-primary" onclick="modifyBoard();">수정</button>
-			<button type="button" class="btn btn-primary" onclick="deleteBoard();">삭제</button>
+			<button type="button" class="btn btn-primary" onclick="modifyMusic();">수정</button>
+			<button type="button" class="btn btn-primary" onclick="deleteMusic();">삭제</button>
 			<button type="button" class="btn" onclick="location.href='<c:url value="/music/pageDetail.do?id=${param.id}'"/>">취소</button>
 		</div>
 	</form>

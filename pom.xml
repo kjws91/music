@@ -21,7 +21,11 @@
 
 	<dependencies>
 	
-	
+        <!--스프링시큐리티 core 라이브러리-->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+        </dependency>
         
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

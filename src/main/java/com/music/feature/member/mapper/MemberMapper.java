@@ -31,6 +31,6 @@ public interface MemberMapper {
 	 * @param memberVo
 	 * @return
 	 */
-	public MemberVo selectLoginMember(MemberVo memberVo);
+	public MemberVo selectLoginMember(MemberVo session);
 	
 }

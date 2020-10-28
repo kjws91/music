@@ -42,7 +42,7 @@
 		     , mod_dt
 		     , mod_id
 		  FROM board
-		 WHERE id = #{id}
+		  WHERE id = #{id}
 		   AND del_yn = 'N'
 	</select>
 	<update id="updateBoard" parameterType="BoardVo">

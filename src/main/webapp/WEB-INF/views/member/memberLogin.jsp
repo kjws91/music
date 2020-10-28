@@ -52,7 +52,6 @@ request.done(function(data){
 	}
 	else{
 		 alert(data.resultMsg);
-		 ${sessoionScope.LoginUserInfo.userId};
 	location.href = MY_CTX + "/";
 }
 });

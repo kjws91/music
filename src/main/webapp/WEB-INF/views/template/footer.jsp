@@ -29,15 +29,6 @@
 			</ul>
 			<p class="copy-right">Template by <a href="#">W3layouts</a></p>
 		</div>
-		<div class="footer-grid">
-			<h3>Newsletter</h3>
-			<p>Subscribe to our newsletter to keep up-to-date with all the latest news.</p>
-			<form>
-				<input type="text" class="text" value="Your Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Name';}">
-				<input type="text" class="text" value="Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Email';}">
-				<input type="submit" value="subscribe" />
-			</form>
-		</div>
 		<div class="clear"> </div>
 	</div>
 </div>

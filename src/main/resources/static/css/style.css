@@ -648,7 +648,7 @@ body{
 }
 
 /* Login Button */
-#loginButton { 
+#loginButton, #logoutButton { 
     display: inline-block;
 	float: right;
 	position: relative;

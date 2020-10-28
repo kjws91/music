@@ -1,13 +1,15 @@
 package com.music.feature.member.controller;
 
+import java.io.IOException;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,6 +20,7 @@ import com.music.feature.member.vo.MemberVo;
 @Controller
 public class MemberController {
 	public static final String TILES_PREFIX="tiles.member.";
+	
 	
 	@Autowired MemberService memberService;
 
@@ -79,5 +82,21 @@ public class MemberController {
 	public @ResponseBody Map<String, String> loginMember(MemberVo memberVo, HttpSession session) {
 		  return memberService.loginMember(memberVo, session);
 	}
+	
+	/**
+	 * <pre>회원 로그아웃</pre>
+	 * @Author      : kjws
+	 * @Date        : 2020. 8. 10.
+	 * @param memberVo
+	 */
+	@GetMapping("/member/logout.do")
+	public void logoutMember(HttpSession session, HttpServletResponse response) {
+		try {
+			session.invalidate();
+			response.sendRedirect("/");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
-

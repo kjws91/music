@@ -14,7 +14,7 @@
 			<tr><td colspan="4">게시물이 존재하지 않습니다.</td></tr>
 		</tbody>
 	</table>
-	<button type="button" class="btn btn-primary" onclick="location.href='<c:url value="/music/pageRegist.do'"/>">등록</button>
+	<button type="button" class="btn btn-primary" onclick="location.href='<c:url value="/music/pageRegist.do"/>'">등록</button>
 </div>
 <script>
 function getMusicList(){

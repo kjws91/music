@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,6 +15,8 @@ import com.music.feature.member.vo.MemberVo;
 
 @Service
 public class MemberService {
+	
+	@Autowired BCryptPasswordEncoder passwdEncoder;
 
 	@Autowired MemberMapper memberMapper;
 	
@@ -25,8 +28,14 @@ public class MemberService {
 	 * @return
 	 */
 	@Transactional
-	public void createMember(MemberVo memberVo) {
-		memberMapper.insertMember(memberVo);
+	public int createMember(MemberVo memberVo) {
+		String inputPassword = memberVo.getPassword();
+		String pwd = passwdEncoder.encode(inputPassword);
+		memberVo.setPassword(pwd);
+		
+		return memberMapper.insertMember(memberVo);
+		
+		
 	}
 	
 	/**
@@ -50,16 +59,16 @@ public class MemberService {
 	public Map<String, String> loginMember(MemberVo memberVo, HttpSession session) {
 		Map<String, String> resultMap = new HashMap<>();
 		MemberVo userInfo = memberMapper.selectLoginMember(memberVo);
-		String password = memberVo.getPassword();
+		String inputPassword = memberVo.getPassword();
 		String realPassword = userInfo.getPassword();
 		String resultCode = "";
 		String resultMsg = "";
-		if(password.equals(realPassword)){
+		if(passwdEncoder.matches(inputPassword, realPassword)){
 			//비번이 같을경우
 			resultCode="200";
 			resultMsg = "로그인성공";
-			session.setAttribute("userinfo", userInfo);
-		}else if (!password.equals(realPassword)) {
+			session.setAttribute("userInfo", userInfo);
+		}else {
 			//비번이 다를경우
 			resultCode = "999";
 			resultMsg = "정보가 일치하지 않습니다.";
@@ -67,7 +76,5 @@ public class MemberService {
 		resultMap.put("resultCode", resultCode);
 		resultMap.put("resultMsg", resultMsg);
 		return resultMap;
-			
-		}
-	
+	}
 }

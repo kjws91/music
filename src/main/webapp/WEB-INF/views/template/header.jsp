@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!------start-768px-menu---->
 <div id="page">
 		<div id="header">
@@ -34,9 +35,13 @@
 	</div>
 	<div class="sign-ligin-btns">
 		<ul>
-			<li id="signupContainer"><a class="signup" id="signupButton" onclick="location.href='<c:url value="/member/pageRegist.do'"/>"><span>회원가입</span></a></li>
-			<li id="loginContainer"><a class="login" id="loginButton" onclick="location.href='<c:url value="/member/pageLogin.do'"/>"><span>로그인</span></i></a></li>
-			<div class="clear"> </div>
+			<c:if test="${sessionScope.userInfo==null}">
+					<li id="signupContainer"><a class="signup" id="signupButton" onclick="location.href='<c:url value="/member/pageRegist.do"/>'"><span>회원가입</span></a></li>
+					<li id="loginContainer"><a class="login" id="loginButton" onclick="location.href='<c:url value="/member/pageLogin.do"/>'"><span>로그인</span></a></li>  
+			</c:if>
+			<c:if test="${sessionScope.userInfo!=null}">
+					<li id="logoutContainer"><a class="login" id="logoutButton" onclick="location.href='<c:url value="/member/logout.do"/>'"><span>로그아웃</span></a></li>
+			</c:if>
 		</ul>
 	</div>
 	<div class="clear"> </div>

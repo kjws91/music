@@ -3,19 +3,31 @@
 	<h1><span>음악 리스트</span> 등록</h1>
 	<form id="musicForm" name="musicForm">
 		<div class="form-group">
-			<label for="title" class="col-sm-2 control-label">제목</label>
+			<label for="title" class="col-sm-2 control-label">노래 제목</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" id="title" name="title" />
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="content" class="col-sm-2 control-label">내용</label>
+			<label for="singer" class="col-sm-2 control-label">가수</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="singer" name="singer"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="content" class="col-sm-2 control-label">가사</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" id="content" name="content"/>
 			</div>
 		</div>
+		<div class="form-group">
+			<label for="year" class="col-sm-2 control-label">출시 년도</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="year" name="year"/>
+			</div>
+		</div>
 		<div class="form-group text-right">
-			<button type="button" class="btn btn-primary" onclick="createBoard();">등록</button>
+			<button type="button" class="btn btn-primary" onclick="createMusic();">등록</button>
 			<button type="button" class="btn" onclick="location.href='<c:url value="/music/pageList.do'"/>">목록</button>
 		</div>
 	</form>
